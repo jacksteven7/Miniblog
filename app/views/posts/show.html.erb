@@ -1,0 +1,11 @@
+<br><h1><%= @post.title%></h1><p><%= link_to 'Back',new_post_path %></p>
+<br><p><%= @post.content%></p>
+<br><br><br>
+<%= form_for @comment, :url => {:controller => 'comments', :action => :create , :id => @post.id } do |f|%>
+	 <%= f.text_area :title, :cols => "80", :rows => "2" %>
+	 <br><br>
+	 <%= f.submit %>
+<%end%>
+<% for comment in @comments %>
+	<h3><%=comment.title%></h3>
+<%end%>
