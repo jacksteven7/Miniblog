@@ -2,7 +2,7 @@
 
 <%= form_for(@post) do |f| %>	
 	Title   <br> <%= f.text_field :title %>    <br>
-	Content <br> <%= f.text_area  :content, :class => 'form-control', :rows => 10 , :cols => 100  %>  <br>
+	Content <br> <%= f.text_area  :content, :class => 'form-control', :rows => 10 , :cols => 100  %><br>
 	<%= f.submit 'Create Post', :class => 'btn btn-primary' %>
 <% end %>
 <h1>My Posts</h1>
@@ -10,8 +10,7 @@
 	<table class="table">
 		<tr>
 			<th><%= link_to post.title , post_path(post) %> </th>
-				<th><%= link_to 'Delete',post, method: :delete %></th>
-
+			<th><%= link_to 'Delete',post, method: :delete %></th>
 		</tr>
 	</table>
 <% end %>
